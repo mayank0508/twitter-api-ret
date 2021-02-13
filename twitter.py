@@ -7,3 +7,6 @@ auth.set_access_token('1360279899433410562-N4zoHGhWKQ5GZVH9maZ45Zuqja5jdO', 'szy
 
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
+user = api.me()
+
+print(user.screen_name)
