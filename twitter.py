@@ -9,4 +9,5 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 user = api.me()
 
-print(user.screen_name)
+for follower in tweepy.Cursor(api.followers).items():
+    print(follower.name)
