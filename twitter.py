@@ -9,5 +9,15 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 user = api.me()
 
-for follower in tweepy.Cursor(api.followers).items():
-    print(follower.name)
+search = '#bitcoin'
+nrTweets = 500
+
+for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
+    try:
+       print('Tweet Linked')
+       tweet.favorite()
+       time.sleep(600)
+    except tweepy.TweepError as e:
+        print(e.reason)
+        except StopIteration:
+            break   
