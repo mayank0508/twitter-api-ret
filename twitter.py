@@ -1,9 +1,9 @@
 import tweepy
 import time
 
-auth = tweepy.OAuthHandler('ofVW1WX28hsxh1bveZaA5FhGh','Qj8RRTD4jDcjY5ELoACS3FQzMWtZ5i03nT6pQT6qluLUEoir37')
+auth = tweepy.OAuthHandler('H6gFo3kndfuxJJkxO9c38nN6X','jLbhFvYvp12WZ1Co9bysn52y8TkVKAujRaESIr7UnJKdGkaETd')
 
-auth.set_access_token('1360279899433410562-N4zoHGhWKQ5GZVH9maZ45Zuqja5jdO', 'szyC5Jtt76pyzgxR5USASwcuFDjKQZiXo2MJpckIKwWCR')
+auth.set_access_token('1360279899433410562-AOrLTpmqRprwcnEIoBwvU1MZwTlEVY', 'jtmOu9zeVWucUiB168ToGYmPeGBTR1FiQYGokJaxdytWG')
 
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
@@ -16,7 +16,7 @@ for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
     try:
        print('Tweet Retweeted')
        tweet.retweet()
-       time.sleep(10)
+       time.sleep(5)
     except tweepy.TweepError as e:
         print(e.reason)
     except StopIteration:
