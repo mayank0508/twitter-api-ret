@@ -9,15 +9,15 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 user = api.me()
 
-search = '#bitcoin'
+search = 'bitcoin'
 nrTweets = 500
 
 for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
     try:
-       print('Tweet Linked')
-       tweet.favorite()
-       time.sleep(600)
+       print('Tweet Retweeted')
+       tweet.retweet()
+       time.sleep(10)
     except tweepy.TweepError as e:
         print(e.reason)
-        except StopIteration:
+    except StopIteration:
             break   
